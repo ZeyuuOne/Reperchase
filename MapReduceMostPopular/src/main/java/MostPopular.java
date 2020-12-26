@@ -89,9 +89,9 @@ public class MostPopular {
                 String token = tokenizer.nextToken();
                 if (token.equals("user_id")) return;
                 if (i == 1) user = Integer.parseInt(token);
-                else if (i == 3) merchant = Integer.parseInt(token);
-                else if (i == 5 && !token.equals("1111")) return;
-                else if (i == 6 && token.equals("0")) return;
+                if (i == 3) merchant = Integer.parseInt(token);
+                if (i == 5 && !token.equals("1111")) return;
+                if (i == 6 && token.equals("0")) return;
             }
             if (!ageU30Set.contains(user)) return;
             keyIntWritable.set(merchant);
