@@ -1,7 +1,5 @@
 import org.apache.spark.{SparkConf, SparkContext}
 
-import scala.collection.mutable
-
 object MostPopular {
   def main(args: Array[String]): Unit = {
     val inputFile = "file:///usr/local/spark-2.4.0/input/user_log_format1.csv"
@@ -12,7 +10,9 @@ object MostPopular {
     val userU30 = info
       .map(line => line.split(","))
       .filter(line => line.size >= 2 && !line(0).equals("user_id") && (line(1).equals("1") || line(1).equals("2") || line(1).equals("3")))
-      .map(line => line(0)).collect().toSet
+      .map(line => line(0))
+      .collect()
+      .toSet
     val input = sc.textFile(inputFile).cache()
     val itemTop100 = input
       .map(line => line.split(","))

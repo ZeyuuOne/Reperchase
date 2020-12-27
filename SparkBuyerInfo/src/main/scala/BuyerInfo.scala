@@ -6,7 +6,7 @@ object BuyerInfo {
   def main(args: Array[String]): Unit = {
     val inputFile = "file:///usr/local/spark-2.4.0/input/user_log_format1.csv"
     val infoFile = "file:///usr/local/spark-2.4.0/input/user_info_format1.csv"
-    val conf = new SparkConf().setAppName("User Info");
+    val conf = new SparkConf().setAppName("User Info")
     val sc = new SparkContext(conf)
     val input = sc.textFile(inputFile).cache()
     val info = sc.textFile(infoFile).cache()
@@ -28,7 +28,6 @@ object BuyerInfo {
       .reduce(_ + _)
     val genderProp = gender
       .map(line => (line._1, line._2.toDouble/buyerSum.toDouble))
-      .collect()
     val age = info
       .map(line => line.split(","))
       .filter(line => buyer.contains(line(0)))
@@ -38,8 +37,7 @@ object BuyerInfo {
       .sortBy(x => x._2, false)
     val ageProp = age
       .map(line => (line._1, line._2.toDouble/buyerSum.toDouble))
-      .collect()
-    sc.parallelize(genderProp).saveAsTextFile("temp/output_0")
-    sc.parallelize(ageProp).saveAsTextFile("temp/output_1")
+    genderProp.saveAsTextFile("temp/output_0")
+    ageProp.saveAsTextFile("temp/output_1")
   }
 }

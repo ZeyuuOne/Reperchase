@@ -23,14 +23,14 @@ object BuyerInfo {
       .select("user_id")
       .distinct()
       .join(infoDF, "user_id")
-    val ageCount = buyer1111
+    buyer1111
       .groupBy("age_range")
       .count()
       .write
       .format("csv")
       .mode("overwrite")
       .save("output_0")
-    val genderCount = buyer1111
+    buyer1111
       .groupBy("gender")
       .count()
       .write
