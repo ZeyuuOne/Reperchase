@@ -30,16 +30,11 @@ public class MostPopular {
 
         public void map(Object key, Text value, Context context) throws IOException, InterruptedException {
             String line = value.toString();
-            StringTokenizer tokenizer = new StringTokenizer(line, ",");
-            int item = 0;
-            for (int i = 0; i < 7; i++) {
-                String token = tokenizer.nextToken();
-                if (token.equals("user_id")) return;
-                if (i == 1) item = Integer.parseInt(token);
-                if (i == 5 && !token.equals("1111")) return;
-                if (i == 6 && token.equals("0")) return;
-            }
-            keyIntWritable.set(item);
+            String[] tokens = line.split(",");
+            if (tokens[0].equals("user_id")) return;
+            if (!tokens[5].equals("1111")) return;
+            if (tokens[6].equals("0")) return;
+            keyIntWritable.set(Integer.parseInt(tokens[1]));
             context.write(keyIntWritable, valueIntWritable);
         }
 
@@ -57,44 +52,22 @@ public class MostPopular {
             BufferedReader fis = new BufferedReader(new FileReader("user_info_format1.csv"));
             String line = null;
             while ((line = fis.readLine()) != null) {
-                StringTokenizer tokenizer = new StringTokenizer(line, ",");
-                int user = 0;
-                boolean ok = true;
-                for (int i = 0; i < 2; i++) {
-                    if (!tokenizer.hasMoreElements()){
-                        ok = false;
-                        break;
-                    }
-                    String token = tokenizer.nextToken();
-                    if (token.equals("user_id")) {
-                        ok = false;
-                        break;
-                    }
-                    if (i == 0) user = Integer.parseInt(token);
-                    if (i == 1 && !(token.equals("1") || token.equals("2") || token.equals("3"))) {
-                        ok = false;
-                        break;
-                    }
-                }
-                if (ok) ageU30Set.add(user);
+                String[] tokens = line.split(",");
+                if (tokens.length < 2) continue;
+                if (tokens[0].equals("user_id")) continue;
+                if (!(tokens[1].equals("1") || tokens[1].equals("2") || tokens[1].equals("3"))) continue;
+                ageU30Set.add(Integer.parseInt(tokens[0]));
             }
         }
 
         public void map(Object key, Text value, Context context) throws IOException, InterruptedException {
             String line = value.toString();
-            StringTokenizer tokenizer = new StringTokenizer(line, ",");
-            int user = 0;
-            int merchant = 0;
-            for (int i = 0; i < 7; i++) {
-                String token = tokenizer.nextToken();
-                if (token.equals("user_id")) return;
-                if (i == 1) user = Integer.parseInt(token);
-                if (i == 3) merchant = Integer.parseInt(token);
-                if (i == 5 && !token.equals("1111")) return;
-                if (i == 6 && token.equals("0")) return;
-            }
-            if (!ageU30Set.contains(user)) return;
-            keyIntWritable.set(merchant);
+            String[] tokens = line.split(",");
+            if (tokens[0].equals("user_id")) return;
+            if (!tokens[5].equals("1111")) return;
+            if (tokens[6].equals("0")) return;
+            if (!ageU30Set.contains(Integer.parseInt(tokens[0]))) return;
+            keyIntWritable.set(Integer.parseInt(tokens[3]));
             context.write(keyIntWritable, valueIntWritable);
         }
 
