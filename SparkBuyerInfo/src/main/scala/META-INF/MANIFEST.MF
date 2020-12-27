@@ -1,0 +1,50 @@
+Manifest-Version: 1.0
+Main-Class: BuyerInfo
+Class-Path: jaxb-api-2.2.2.jar commons-cli-1.2.jar jline-0.9.94.jar spar
+ k-unsafe_2.11-2.4.0.jar zstd-jni-1.3.2-2.jar jackson-mapper-asl-1.9.13.
+ jar curator-framework-2.6.0.jar spark-network-common_2.11-2.4.0.jar aop
+ alliance-1.0.jar jersey-common-2.22.2.jar metrics-core-3.1.5.jar scala-
+ reflect-2.11.12.jar spark-core_2.11-2.4.0.jar pyrolite-4.13.jar javax.w
+ s.rs-api-2.0.1.jar compress-lzf-1.0.3.jar paranamer-2.8.jar scala-xml_2
+ .11-1.0.6.jar commons-collections-3.2.2.jar json4s-jackson_2.11-3.5.3.j
+ ar scala-library-2.11.12.jar avro-1.8.2.jar kryo-shaded-4.0.2.jar hadoo
+ p-yarn-api-2.6.5.jar httpcore-4.2.4.jar lz4-java-1.4.0.jar stax-api-1.0
+ -2.jar jackson-module-scala_2.11-2.6.7.1.jar gson-2.2.4.jar jackson-jax
+ rs-1.9.13.jar hadoop-mapreduce-client-shuffle-2.6.5.jar commons-httpcli
+ ent-3.1.jar jsr305-1.3.9.jar unused-1.0.0.jar json4s-scalap_2.11-3.5.3.
+ jar hadoop-yarn-server-common-2.6.5.jar jackson-annotations-2.6.7.jar c
+ ommons-compress-1.8.1.jar netty-all-4.1.17.Final.jar jackson-core-2.6.7
+ .jar hadoop-common-2.6.5.jar RoaringBitmap-0.5.11.jar javax.inject-2.4.
+ 0-b34.jar spark-tags_2.11-2.4.0.jar api-asn1-api-1.0.0-M20.jar zookeepe
+ r-3.4.6.jar chill_2.11-0.9.3.jar jul-to-slf4j-1.7.16.jar hadoop-yarn-se
+ rver-nodemanager-2.6.5.jar api-util-1.0.0-M20.jar log4j-1.2.17.jar jers
+ ey-server-2.22.2.jar curator-recipes-2.6.0.jar xercesImpl-2.9.1.jar jet
+ ty-util-6.1.26.jar javax.inject-1.jar jettison-1.1.jar spark-kvstore_2.
+ 11-2.4.0.jar metrics-jvm-3.1.5.jar curator-client-2.6.0.jar commons-cry
+ pto-1.0.0.jar guice-3.0.jar hk2-locator-2.4.0-b34.jar py4j-0.10.7.jar j
+ avax.servlet-api-3.1.0.jar jersey-media-jaxb-2.22.2.jar xml-apis-1.3.04
+ .jar apacheds-i18n-2.0.0-M15.jar commons-beanutils-core-1.8.0.jar jcl-o
+ ver-slf4j-1.7.16.jar avro-mapred-1.8.2-hadoop2.jar metrics-graphite-3.1
+ .5.jar ivy-2.4.0.jar osgi-resource-locator-1.0.1.jar jackson-core-asl-1
+ .9.13.jar hk2-utils-2.4.0-b34.jar apacheds-kerberos-codec-2.0.0-M15.jar
+  commons-codec-1.9.jar snappy-java-1.1.7.1.jar chill-java-0.9.3.jar had
+ oop-yarn-client-2.6.5.jar oro-2.0.8.jar htrace-core-3.0.4.jar json4s-co
+ re_2.11-3.5.3.jar commons-configuration-1.6.jar hadoop-mapreduce-client
+ -core-2.6.5.jar commons-net-3.1.jar aopalliance-repackaged-2.4.0-b34.ja
+ r stream-2.7.0.jar hadoop-annotations-2.6.5.jar minlog-1.3.0.jar javax.
+ annotation-api-1.2.jar jersey-container-servlet-2.22.2.jar jackson-data
+ bind-2.6.7.1.jar commons-math3-3.4.1.jar objenesis-2.5.1.jar xbean-asm6
+ -shaded-4.8.jar jackson-module-paranamer-2.7.9.jar validation-api-1.1.0
+ .Final.jar spark-network-shuffle_2.11-2.4.0.jar hadoop-client-2.6.5.jar
+  xmlenc-0.52.jar hadoop-yarn-common-2.6.5.jar spark-launcher_2.11-2.4.0
+ .jar protobuf-java-2.5.0.jar javassist-3.18.1-GA.jar commons-beanutils-
+ 1.7.0.jar slf4j-api-1.7.16.jar jackson-xc-1.9.13.jar hadoop-auth-2.6.5.
+ jar xz-1.5.jar json4s-ast_2.11-3.5.3.jar httpclient-4.2.5.jar metrics-j
+ son-3.1.5.jar commons-io-2.4.jar slf4j-log4j12-1.7.16.jar commons-lang-
+ 2.6.jar guava-16.0.1.jar commons-lang3-3.5.jar hadoop-mapreduce-client-
+ app-2.6.5.jar hadoop-hdfs-2.6.5.jar hk2-api-2.4.0-b34.jar commons-diges
+ ter-1.8.jar activation-1.1.1.jar leveldbjni-all-1.8.jar jersey-client-2
+ .22.2.jar jersey-container-servlet-core-2.22.2.jar netty-3.9.9.Final.ja
+ r avro-ipc-1.8.2.jar hadoop-mapreduce-client-common-2.6.5.jar jersey-gu
+ ava-2.22.2.jar hadoop-mapreduce-client-jobclient-2.6.5.jar
+
