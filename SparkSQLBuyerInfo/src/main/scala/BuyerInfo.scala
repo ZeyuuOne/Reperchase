@@ -22,7 +22,7 @@ object BuyerInfo {
       .filter($"time_stamp" === 1111 && $"action_type" === 2)
       .select("user_id")
       .distinct()
-      .join(infoDF, "user_id")
+      .join(infoDF, joinExprs = inputDF.col("user_id") === infoDF.col("user_id"))
     buyer1111
       .groupBy("age_range")
       .count()
